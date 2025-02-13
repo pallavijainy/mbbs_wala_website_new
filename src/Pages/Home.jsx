@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import HeroSection from "../component/HeroSection";
 import Partners from "../component/Partners";
 import ConnectWithCommunity from "../component/ConnectWithCommunity";
@@ -14,41 +14,48 @@ import MedicalDegrees from "../component/MedicalDegrees";
 import GetInTouch from "../component/GetInTouch";
 import ContactUs from "../component/ContactUs";
 import FAQ from "../component/FAQ";
-import Footer from "../layout/Footer";
+import LoginForm from "../component/LoginForm";
 
 const Home = () => {
-  return (
-    <>
-      <HeroSection />
-      <Partners />
-      <ConnectWithCommunity />
-      <ProvenTrackRecord />
-      <WhyChoose />
-      <AdmissionSection />
-      <WorkProcess />
-      <NewCollege />
-      <TestimonialSection />
-      <TestimonialCard />
-      <Gallery />
-      <MedicalDegrees
-        heading={"Explore Programs"}
-        subHeading={"Medical Degrees"}
-        description="Let’s join our famous class, the knowledge provided will definitely be useful for you."
-        redirectMore="/courses"
-        redirect="/coursedetail"
-      />
-      <MedicalDegrees
-        heading={"EXPLORE COLLEGES"}
-        subHeading={"Medical Colleges"}
-        description="let's join fantastic college"
-        redirectMore="/institution"
-        redirect="/institutiondetail"
-      />
-      <GetInTouch />
-      <ContactUs />
-      <FAQ />
-    </>
-  );
+    const [isLoginFormOpen, setIsLoginFormOpen] = useState(false);
+    if (isLoginFormOpen) {
+        console.log("hello");
+    }
+    return (
+        <>
+            {isLoginFormOpen && (
+                <LoginForm setIsLoginFormOpen={setIsLoginFormOpen} />
+            )}
+            <HeroSection setIsLoginFormOpen={setIsLoginFormOpen} />
+            <Partners />
+            <ConnectWithCommunity />
+            <ProvenTrackRecord />
+            <WhyChoose />
+            <AdmissionSection />
+            <WorkProcess />
+            <NewCollege />
+            <TestimonialSection />
+            <TestimonialCard />
+            <Gallery />
+            <MedicalDegrees
+                heading={"Explore Programs"}
+                subHeading={"Medical Degrees"}
+                description="Let's join our famous class, the knowledge provided will definitely be useful for you."
+                redirectMore="/courses"
+                redirect="/coursedetail"
+            />
+            <MedicalDegrees
+                heading={"EXPLORE COLLEGES"}
+                subHeading={"Medical Colleges"}
+                description="let's join fantastic college"
+                redirectMore="/institution"
+                redirect="/institutiondetail"
+            />
+            <GetInTouch />
+            <ContactUs />
+            <FAQ />
+        </>
+    );
 };
 
 export default Home;

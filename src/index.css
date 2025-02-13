@@ -1,20 +1,19 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Kalam:wght@300;400;700&family=Kite+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Kalam:wght@300;400;700&family=Kite+One&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
+/* body{
     padding: 20px;
-}
+} */
 
-.kalamFont{
+.kalamFont {
     font-family: "Kalam", serif;
 }
-.KiteOneFont{
+.KiteOneFont {
     font-family: "Kite One", serif;
 }
-.jostFont{
+.jostFont {
     font-family: "Jost", serif;
 }
